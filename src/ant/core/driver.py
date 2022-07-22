@@ -196,6 +196,8 @@ class USB2Driver(Driver):
                 dev.detach_kernel_driver(0)
             except USBError as e:
                 exit("could not detach kernel driver: {}".format(e))
+            except NotImplementedError:
+                pass
 
         dev.set_configuration()
         cfg = dev.get_active_configuration()
