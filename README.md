@@ -1,3 +1,13 @@
+This is a fork of one of the many forks of the original python-ant project,
+which I am modifying for my Linux-based speed/cadence display. 
+
+- demos/ant.core/cadence.py displays output from combined speed/cadence sensor
+- python3 support so I can use the arcade library
+
+
+
+----
+
 ANT
 ===
 

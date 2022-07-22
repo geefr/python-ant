@@ -26,6 +26,9 @@
 
 from __future__ import division, absolute_import, print_function, unicode_literals
 
+from builtins import str
+from builtins import range
+from builtins import object
 from uuid import uuid4
 from threading import Lock
 

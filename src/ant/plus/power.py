@@ -2,6 +2,7 @@
 """ANT+ Bicycle Power Device Profile
 
 """
+from __future__ import division
 # pylint: disable=not-context-manager,protected-access
 ##############################################################################
 #
@@ -27,6 +28,8 @@
 #
 ##############################################################################
 
+from builtins import bytes
+from past.utils import old_div
 from struct import Struct
 
 from ant.core.message import *
@@ -111,7 +114,7 @@ class BicyclePower(DeviceProfile):
                     self.pedalPowerRatio = None
                 else:
                     self.pedalDifferentiation = (pedalPowerByte >> 7) == 1
-                    self.pedalPowerRatio = (pedalPowerByte & 0x7F) / 100  # Convert from percent to fraction
+                    self.pedalPowerRatio = old_div((pedalPowerByte & 0x7F), 100)  # Convert from percent to fraction
 
                 if self.cadence == 0xFF:  # Invalid value
                     self.cadence = None
@@ -142,4 +145,4 @@ class BicyclePower(DeviceProfile):
 
 # Used by Torque Effectiveness and Pedal Smoothness page. Assumes value is in 1/2% increments.
 def convertPercent(value):
-    return None if value == 0xFF else (value / 200)
+    return None if value == 0xFF else (old_div(value, 200))

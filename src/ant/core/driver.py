@@ -26,6 +26,8 @@
 
 from __future__ import division, absolute_import, print_function, unicode_literals
 
+from builtins import str
+from builtins import object
 from threading import Lock
 
 # USB1 driver uses a USB<->Serial bridge

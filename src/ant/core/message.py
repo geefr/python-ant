@@ -26,6 +26,7 @@
 
 from __future__ import division, absolute_import, print_function, unicode_literals
 
+from builtins import bytes
 from struct import pack, unpack
 
 from six import with_metaclass

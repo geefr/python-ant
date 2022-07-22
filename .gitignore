@@ -3,6 +3,9 @@
 *.swp
 *.ant
 *.swo
+*.rej
+*.bak
+*~
 .installed.cfg
 virtualenv.py
 bootstrap.py

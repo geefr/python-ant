@@ -28,7 +28,9 @@
 ##############################################################################
 
 from __future__ import print_function
+from __future__ import division
 
+from past.utils import old_div
 from .plus import DeviceProfile
 
 
@@ -61,7 +63,7 @@ class HeartRate(DeviceProfile):
         self._detected_device = None
 
     def event_time_correction(self, time_difference):
-        return time_difference * 1000 / 1024
+        return old_div(time_difference * 1000, 1024)
 
     def processData(self, data):
         page_index = 0

@@ -30,6 +30,8 @@
 
 from __future__ import division, absolute_import, print_function, unicode_literals
 
+from builtins import str
+from builtins import object
 from time import sleep, time
 from threading import Lock, Thread
 
